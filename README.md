@@ -1,5 +1,14 @@
 # E6893 Big Data Analytics: Trending Products Acquisition and Tuning for E-commerce
 
+# Additional Demo Links:
+
+* Frontend: http://35.211.101.139:3000/
+* API examples:
+    * http://35.211.101.139:8081/wordcount/keywords
+    * http://35.211.101.139:8081/get_tweets/3/favorite_count/desc/electronics
+    * http://35.211.101.139:8081/stats/summary
+    * http://35.211.101.139:8081/stats/count/category
+
 # Running twitter_stream.py
 
 ## Dependencies
