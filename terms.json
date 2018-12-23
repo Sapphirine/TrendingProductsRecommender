@@ -1,0 +1,84 @@
+// Hashtags per category as "category_name": [list of terms], which will spawn one query stream per category.
+// All terms in "general" will be added to all queries.  Supports "#hashtag" and "keyword" formats.
+{
+  "general": [
+    "launch",
+    "trending",
+    "preorder",
+    "expo",
+    "release",
+    "love"
+  ],
+  "video_games": [
+    "E3",
+    "Switch",
+    "Playstation",
+    "PS4",
+    "Xbox",
+    "\"PC game\"",
+    "\"Video game\"",
+    "game",
+    "gaming",
+    "Bethesda",
+    "Nintendo",
+    "Blizzard game"
+  ],
+  "toys": [
+    "Lego",
+    "\"Action Figure\"",
+    "\"Melissa & Doug\"",
+    "\"Melissa and Doug\"",
+    "Crayola",
+    "Barbie",
+    "\"Little tikes\"",
+    "Fisher-price",
+    "\"Fisher price\"",
+    "Fisherprice",
+    "Disney toy",
+    "K'nex",
+    "Knex",
+    "Glitter Girls doll",
+    "FurReal friends",
+    "PlayDoh",
+    "Play-Doh",
+    "\"Play Doh\""
+  ],
+  "snacks": [
+    "\"Cheetos\"",
+    "\"Combos\"",
+    "\"CornNuts\"",
+    "\"Doritos\"",
+    "Haribo",
+    "\"Jack Link's\"",
+    "\"Keebler\"",
+    "\"Kettle chips\"",
+    "\"KIND Healthy Snacks\"",
+    "\"Lay's\"",
+    "\"LesserEvil\"",
+    "\"Little Debbie\"",
+    "\"Oreos\"",
+    "\"Pringles\"",
+    "\"Pirate's Booty\"",
+    "\"Popchips\"",
+    "\"Reese's\"",
+    "\"Ruffles\"",
+    "\"Tostitos\"",
+    "\"Utz\"",
+    "\"Zapp's\"",
+    "delicious chips"
+  ],
+  "electronics": [
+    "Blueray player",
+    "\"Smart home\"",
+    "\"Laptop\"",
+    "Apple",
+    "Microsoft",
+    "Samsung",
+    "Philips",
+    "Sony",
+    "Panasonic",
+    "Dell",
+    "Toshiba"
+  ]
+
+}

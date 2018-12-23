@@ -1,0 +1,20 @@
+[Unit]
+Description=HBase start/stop
+After=hdfs.service yarn.service
+Requires=hdfs.service yarn.service
+
+[Service]
+User=alexdziena
+Group=alexdziena
+Type=forking
+ExecStart=/home/alexdziena/hbase/bin/start-hbase.sh
+ExecStop=/home/alexdziena/hbase/bin/stop-hbase.sh
+RemainAfterExit=yes
+PIDFile=/tmp/hbase-alexdziena-master.pid
+WorkingDirectory=/home/alexdziena/hadoop
+Environment=JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+Environment=HADOOP_HOME=/home/alexdziena/hadoop
+TimeoutStartSec=2min
+
+[Install]
+WantedBy=multi-user.target

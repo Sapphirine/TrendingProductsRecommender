@@ -1,0 +1,20 @@
+[Unit]
+Description=HBase thrift start/stop
+After=hbase.service
+Requires=hbase.service
+
+[Service]
+User=alexdziena
+Group=alexdziena
+Type=forking
+ExecStart=/home/alexdziena/hbase/bin/hbase-daemon.sh start thrift
+ExecStop=/home/alexdziena/hbase/bin/hbase-daemon.sh stop thrift
+RemainAfterExit=yes
+PIDFile=/tmp/hbase-alexdziena-thrift.pid
+WorkingDirectory=/home/alexdziena/hadoop
+Environment=JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+Environment=HADOOP_HOME=/home/alexdziena/hadoop
+TimeoutStartSec=2min
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>vis</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css">
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <div id="wordcloud"></div>
+  </div>
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  <script>
+    const BASE_API_URL = "http://35.211.101.139:8081";
+    function build_wordcloud(words) {
+      $('#wordcloud').jQCloud(words, {
+        delay: 50,
+        autoResize: true,
+          width: 500, height: 350
+      });
+    }
+    $(function() {
+
+      let request = $.getJSON(BASE_API_URL + "/wordcount/keywords", function(data) {
+          var words = [];
+          $.each( data, function( key, val ) {
+            words.push(
+              {
+                  text: key,
+                  weight: val,
+                  html: { "class": "wordcloud-word" },
+                  handlers: {
+                    click: function(e) {
+                      alert(e);
+                    }
+                  },
+                  // afterWordRender: function(){}
+              }
+            );
+          });
+          build_wordcloud(words);
+      });
+
+    });
+  </script>
+</body>
+</html>

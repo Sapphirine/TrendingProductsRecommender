@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Resume - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <h3 class="d-none d-lg-block mb-2" style="white-space: normal !important;">Trending Products Recommender</h3>
+        <!--<span class="d-none d-lg-block">-->
+          <!--<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">-->
+        <!--</span>-->
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#stats">Stats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#top_tweets">Top Tweets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#word_clouds">Word Clouds</a>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="project_info">
+        <div class="my-auto">
+          <h2 class="mb-5">Project Info</h2>
+          <h3>Trending Products Recommender for E-Commerce</h3>
+          <p>Alex Dziena, Jaewon Lee, and Johan Sulaiman</p>
+          <p>
+            Department of Computer Science<br />
+            Columbia University
+          </p>
+          <p>
+            In a multi-platform e-commerce business, revenue growth is highly correlated with superior product selection and low prices. This paper describes a Trending Products application that provides up-to-date category-specific recommendations, by scraping Twitter and potentially other public news sources for product announcements, product reviews, product promotions, and other product-related articles, along with their accompanying social media reactions.
+          </p>
+
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="stats">
+        <div class="my-auto">
+          <h2 class="mb-5">Stats</h2>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="subheading mb-5">Summary Statistics</div>
+              <div id="stats_summary"></div>
+            </div>
+            <div class="col-6">
+              <div class="subheading mb-5">Counts by Type</div>
+              <h3>By Category</h3>
+              <div id="barchart-by-category"></div>
+              <h3>Top-5 Products by Tweet Count</h3>
+              <div id="barchart-by-product"></div>
+              <div id="stats_counts"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="top_tweets">
+        <div class="my-auto">
+          <h2 class="mb-5">Top Tweets</h2>
+          <table id="top-tweets-table" style="font-size: 12px;"></table>
+        </div>
+
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="word_clouds">
+        <div class="my-auto">
+          <h2 class="mb-5">Word Clouds</h2>
+          <p>A wordcloud visualization of products and search keywords from our dataset, weighted by tweet volume, and filtered to include only tweets with poistive sentiment and > 0 favorite, retweet, reply, or quote counts.</p>
+          <div class="row">
+            <div class="col-6">
+              <div class="subheading mb-5">Keywords</div>
+              <div id="wordcloud-keywords"></div>
+            </div>
+            <div class="col-6">
+              <div class="subheading mb-5">Products</div>
+              <div id="wordcloud-products"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/libs/d3.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/d3_formats.js"></script>
+    <script src="js/resume.min.js"></script>
+    <script src="js/tpr_constants.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/wordcloud.js"></script>
+    <script src="js/top_tweets.js"></script>
+
+  </body>
+
+</html>

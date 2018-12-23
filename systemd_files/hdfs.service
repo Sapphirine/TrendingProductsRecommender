@@ -1,0 +1,15 @@
+[Unit]
+Description=HDFS start/stop
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=alexdziena
+Group=alexdziena
+Type=oneshot
+ExecStart=/home/alexdziena/hadoop/sbin/start-dfs.sh
+ExecStop=/home/alexdziena/hadoop/sbin/stop-dfs.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

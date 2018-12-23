@@ -1,0 +1,19 @@
+[Unit]
+Description=Jupyter Notebook
+
+[Service]
+Environment=SPARK_HOME=/home/alexdziena/spark
+Type=simple
+PIDFile=/run/jupyter.pid
+# Step 1 and Step 2 details are here..
+# ------------------------------------
+ExecStart=/home/alexdziena/anaconda3/bin/jupyter-notebook --config=/home/alexdziena/.jupyter/jupyter_notebook_config.py
+User=alexdziena
+Group=alexdziena
+WorkingDirectory=/home/alexdziena
+Restart=always
+RestartSec=10
+#KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

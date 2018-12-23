@@ -1,0 +1,15 @@
+[Unit]
+Description=Rest API
+After=network.target
+
+[Service]
+EnvironmentFile=/home/alexdziena/big-data-analytics/final_project/.env
+User=alexdziena
+Restart=always
+Type=simple
+WorkingDirectory=/home/alexdziena/big-data-analytics/final_project
+ExecStart=/home/alexdziena/.local/bin/pipenv run python /var/www/rest-api/api.py --hbase_table_prefix 20181210_224422_alexdziena
+RestartSec=300
+
+[Install]
+WantedBy=multi-user.target
